@@ -8,9 +8,12 @@ const bodyParser = require('body-parser');
 
 const router = require('./src/router');
 const syncServiceDetails = require('./src/sync_service_details');
+//cors npm pakage
+const cors = require('cors');
 
 // Create Express webapp
 const app = express();
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Add body parser for Notify device registration
